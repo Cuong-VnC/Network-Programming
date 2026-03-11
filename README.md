@@ -18,9 +18,9 @@ Advanced Game Logic: - Dynamic board rendering after every turn.
 
 ### 🛠 System Requirements & Installation
 1. Requirements
-    OS: Windows 10/11 (Recommended).
-    Compiler: GCC (via MinGW-w64 for Windows).
-    Library: ws2_32 (Windows Socket library).
+- OS: Windows 10/11 (Recommended).
+- Compiler: GCC (via MinGW-w64 for Windows).
+- Library: ws2_32 (Windows Socket library).
 
 2. Compilation
 Open your terminal (CMD or PowerShell) in the project directory and run the following commands:
@@ -31,34 +31,38 @@ Open your terminal (CMD or PowerShell) in the project directory and run the foll
 
 ### 🚀 How to Play
 To start a game, you need to open three separate terminal windows.
-Step 1: Initialize the Server
+- Step 1: Initialize the Server
     In the first terminal, run:
+  #
         server.exe
 The server will start listening on port 8888 and wait for two players to connect.
-
-Step 2: Connect Clients
+- Step 2: Connect Clients
     In the second and third terminals, run:
+  #
         client.exe
-
-Step 3: Ship Placement
-Once connected, both players must input their fleet coordinates using the following format:
-    B:A1,A2,A3,A4 P1:B1,B2 P2:C1,C2
-        (B = Battleship, P1/P2 = Patrol Boats)
-
-Step 4: Battle
+- Step 3: Ship Placement
+Once connected, both players must input their fleet coordinates using the following format(B = Battleship, P1/P2 = Patrol Boats):
+#
+        B:A1,A2,A3,A4 P1:B1,B2 P2:C1,C2
+- Step 4: Battle
 Players take turns entering target coordinates (e.g., B3).
 Legend:
-[X]: Hit (You struck an enemy ship).
-[O]: Miss (You hit the water).
-[?]: Alert (Your own ship has been hit).
++ [X]: Hit (You struck an enemy ship).
++ [O]: Miss (You hit the water).
++ [?]: Alert (Your own ship has been hit).
 
 ### 📡 Communication Protocol
 The game utilizes a custom string-based protocol for data exchange:
-
+#
 Command      |  Direction  | Description
+| :---:  | :--- | :--- |
 CONNECT_OK   |   S ➔ C    | Confirms the client is successfully connected.
 TURN         |   S ➔ C    |Notifies the client it is their turn to shoot.
 WAIT         |   S ➔ C    |Notifies the client to wait for the opponent.
 HIT/MISS/SUNK|   S ➔ C    |Reports the result of the last shot.
 WIN/LOSE     |   S ➔ C    |Declares the end of the game and the winner.
 
+### 🔧 Troubleshooting
+- Connection Timed Out: Ensure your Windows Firewall is not blocking port 8888.
+- GCC not recognized: Add your MinGW bin folder to the System Environment Variables (Path).
+- Frozen Screen: Ensure you start the server first before launching the client.
