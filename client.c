@@ -81,7 +81,7 @@ int main() {
     closesocket(sock); // Đóng socket
     WSACleanup();      // Giải phóng Winsock
 
-    system("pause"); // Giữ màn hình (Windows)
+    system("pause"); // Giữ màn hình
 
     return 0;
 }
