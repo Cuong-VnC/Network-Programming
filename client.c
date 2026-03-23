@@ -11,7 +11,7 @@ int main() {
     WSADATA wsa;
     WSAStartup(MAKEWORD(2, 2), &wsa); // Khởi động Winsock
 
-    // Tạo socket TCP
+    // Create socket TCP
     SOCKET sock = socket(AF_INET, SOCK_STREAM, 0);
 
     // Cấu hình địa chỉ server
