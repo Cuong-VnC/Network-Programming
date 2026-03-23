@@ -3,7 +3,7 @@
 #include <string.h>     
 #include <winsock2.h>  // Thư viện socket 
 
-#pragma comment(lib, "ws2_32.lib") // Link thư viện Winsock
+#pragma comment(lib, "ws2_32.lib") //  thư viện Winsock
 
 #define PORT 8888 // Port kết nối tới server
 
