@@ -56,7 +56,7 @@ int main() {
             char move[10];
             scanf("%s", move); // Nhập nước đi
 
-            send(sock, move, strlen(move), 0); // Gửi nước đi
+            send(sock, move, strlen(move), 0); // Gửi nước đi.
         } 
         // Nếu phải chờ
         else if (strcmp(buffer, "WAIT") == 0) {
