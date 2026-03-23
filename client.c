@@ -20,7 +20,7 @@ int main() {
 
     printf("Dang ket noi den server...\n");
 
-    // Kết nối đến server
+    // Kết nối đến server.
     if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0) {
         printf("Ket noi THAT BAI! Hay mo Server truoc.\n");
         return -1;
